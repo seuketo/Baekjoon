@@ -1,0 +1,15 @@
+n개의 블럭이 피라미드의 1층 베이스가 되고, 그 다음 층은 n - 1씩 쌓아 올려진다.
+    => 이 문제는 블럭의 층만을 입력 받고, 그 입력 받은 층을 바탕으로 총 몇 개의 블럭이 해당 층만큼 쌓을 때 필요한 지 출력하는 코드.
+    => EOF 포함.
+    => 종료 조건 = 인풋값이 0
+
+인풋으로 받아야 할 갯수 = 1
+    ㄴ BufferedReader O
+    ㄴ StringBuilder O => 1개 필요
+    ㄴ StringTokenizer X
+
+변수
+    ㄴ int형 변수 1개
+    ㄴ StringBuilder형 객체 1개
+    ㄴ BufferedReader형 객체 1개
+    ㄴ while로 반복

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/Bronze 1/a_2596.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 1/a_1145.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 2/a_11340.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_27465.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_2875.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_30917.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_4619.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_3029.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 4/a_14470.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 4/a_5928.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 4/a_16199.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 4/a_5357.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 5/a_29807.java" />
+      <file url="file://$PROJECT_DIR$/Silver 5/a_1181.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 1/a_1236.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 1/a_4150.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 3/a_2547.java" />
+      <file url="file://$PROJECT_DIR$/Silver 4/a_4096.java" />
+      <file url="file://$PROJECT_DIR$/Bronze 4/a_29736_other.java" />
+    </excludeFromCompile>
+  </component>
+</project>

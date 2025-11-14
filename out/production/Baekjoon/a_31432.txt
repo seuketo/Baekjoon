@@ -1,0 +1,46 @@
+# digits.length = 4
+# length = 2 ~ 4
+
+* length = 2
+
+	for (int i = 0; i <= digits.length - length; i++){				- i = 0 ~ 2
+		StringBuilder sb = new StringBuilder();			- sb 선언
+		for (int j = 0; j < length; j++){				-  j = 0 ~ 1 (해당 for문이 특정 숫자 조합식 담당)
+			sb.append(digits[i + j]);				=> sb.append(digits[0 + 0]).append(digits[0 + 1]) == 12
+		}
+	System.out.println(sb.toString());					- 여기다가 저장구문 삽입
+	}
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // 입력된 숫자들 (예시: 1 2 3)
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        
+        // 공백을 기준으로 숫자들 분리
+        String[] digits = input.split(" ");
+        
+        // 자릿수를 늘려가며 조합 생성 (최소 2자리부터 최대 길이까지)
+        for (int length = 2; length <= digits.length; length++) {
+            generateCombinations(digits, length, 0, new StringBuilder());
+        }
+    }
+    
+    // 중복 사용이 가능한 조합을 출력하는 재귀 함수
+    public static void generateCombinations(String[] digits, int length, int index, StringBuilder current) {
+        if (current.length() == length) {
+            System.out.println(current.toString()); // 완성된 자리 수 출력
+            return;
+        }
+        
+        for (int i = 0; i < digits.length; i++) {
+            current.append(digits[i]);
+            generateCombinations(digits, length, i, current); // 중복을 허용하므로 i를 그대로 넘김
+            current.deleteCharAt(current.length() - 1); // 백트래킹 (문자열 마지막 자리 제거)
+        }
+    }
+}

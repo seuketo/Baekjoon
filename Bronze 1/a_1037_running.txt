@@ -1,0 +1,28 @@
+divisor_max = 3
+divisor_min = 3
+i = 0
+
+divisor_max < arr[1]
+divisor_max = 4
+i = 1
+
+divisor_max > arr[2]
+divisor_min > arr[2]
+divisor_min = 2
+i = 2
+
+divisor_max < arr[3]
+divisor_max = 12
+i = 3
+
+divisor_max > arr[4]
+divisor_min < arr[4]
+i = 4
+
+divisor_max > arr[5]
+divisor_max < arr[5]
+i = 5
+
+6 == divisor_arr.length
+=> break;
+

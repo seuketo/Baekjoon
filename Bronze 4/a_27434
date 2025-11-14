@@ -1,0 +1,66 @@
+public class BigNumberFactorial {
+
+    public static String multiply(String num1, String num2) {                                   // 3. multiply 함수
+        int len1 = num1.length();                                                                   // len1에 n의 길이 저장
+        int len2 = num2.length();                                                                   // len2에 i의 길이 저장
+        int[] result = new int[len1 + len2];                                                        // 정수형 배열 result 크기를 len1 + len2로 결정
+
+        for (int i = len1 - 1; i >= 0; i--) {                                                       // 정수 i값이 len1 - 1부터 0이될 때까지 계속 1씩 빼기
+            for (int j = len2 - 1; j >= 0; j--) {                                                       // 정수 j값이 len2 - 1부터 0이될 때까지 계속 1씩 빼기 (중복 반복문)
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');                                  // 정수 mul 값을 (문자열 n의 i번째 문자를 뽑아서 아스키코드표에서 '0'의 값을 뺀 결과 * 문자열 i에서 j번째 문자를 뽑아서 '0'의 값을 뺀 결과)로 저장
+                int sum = mul + result[i + j + 1];                                                          // 정수 sum 값을 mul + result[i + j + 1]로 저장. (result[i + j + 1]의 값은 0)
+                result[i + j + 1] = sum % 10;                                                               // result[i + j + 1]은 sum % 10으로
+                result[i + j] += (sum / 10);                                                                
+                                                                                                            //result[i + j]에다가 sum / 10의 결과값을 더함.
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();                                                     // StringBuilder 객체 생성
+        for (int num : result) {                                                                    // 정수형 배열 result에 들어있는 요소가 끝날때까지 반복문 (num)
+            if (!(sb.length() == 0 && num == 0)) {                                                      // sb의 길이가 0이 아니거나 또는 num이 0이 아니면 sb에 num값 저장.
+                sb.append(num);
+            }
+        }
+
+        return sb.length() == 0 ? "0" : sb.toString();                                             // 만약 sb의 길이가 0이라는 조건이 참이면 0 반환, 거짓이면 sb.toString() 반환.
+    }
+
+    public static String factorial(int n) {                                                     // 2. factorial 함수
+        String result = "1";                                                                        // 문자열 result에 1 저장
+        for (int i = 2; i <= n; i++) {                                                              // 2부터 n까지 multiply(n, i) 함수를 사용해서 factorial 계산 (1은 굳이 곱할 이유 x) => 3.
+            result = multiply(result, Integer.toString(i));
+        }
+        return result;                                                                              // result return.
+    }
+
+    public static void main(String[] args) {                                                    // 1. main함수
+        int n = 100;                                                                                // 정수값 n에 br 삽입.
+        String fact = factorial(n);                                                                 // fact에는 factorial(n) 함수값 삽입. => 2.
+        System.out.println(n + " 팩토리얼: " + fact);                                                // 결과 출력.
+    }
+}
+
+
+
+/*
+if)
+n = 100 -> fact = factorial(100)
+    // factorial
+        result = "1"
+        for (int i = 2; i <= 100; i++) result = multiply("1", "2");
+        
+        //multiply
+            num1 = "1"; -> len1 = 1;
+            num2 = "2"; -> len2 = 1;
+            result = new int[2];
+            for (int i = len1 - 1; i >= 0; i--){
+                for (int j = len2 - 1; j >= 0; j--)
+                        if) i == 0, j == 0
+                            mul = ('1' - '0') * ('2' - '0') == 2
+                            sum = 2
+                            result[1] = 2
+                            result[0] += 0
+                } 
+            }
+
+*/
